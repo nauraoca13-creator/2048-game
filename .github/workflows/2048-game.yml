@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
       - name: stop and remove existing container
         run: |
-          docker compose down || true
+          docker-compose down || true
           docker rmi $(docker images -q) || true
       - name: start container
-        run: docker compose up -d
+        run: docker-compose up -d
